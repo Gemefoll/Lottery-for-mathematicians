@@ -3,10 +3,10 @@ use std::io;
 
 fn step(a: &mut BigInt) {
     if !a.bit(0) {
-        *a = a.checked_div(&BigInt::from(2)).unwrap();
+        *a >>= 1;
     } else {
-        *a = (*a).clone() + (*a).clone() + (*a).clone();
-        *a += BigInt::from(1);
+        *a *= 3;
+        *a += 1;
     }
 }
 
