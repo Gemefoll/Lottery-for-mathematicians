@@ -16,8 +16,8 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>400</x>
-     <y>370</y>
+     <x>440</x>
+     <y>400</y>
      <width>111</width>
      <height>26</height>
     </rect>
@@ -29,8 +29,8 @@
   <widget class="QPlainTextEdit" name="plainTextEdit">
    <property name="geometry">
     <rect>
-     <x>250</x>
-     <y>120</y>
+     <x>290</x>
+     <y>180</y>
      <width>431</width>
      <height>171</height>
     </rect>
@@ -39,14 +39,27 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>250</x>
-     <y>50</y>
+     <x>290</x>
+     <y>370</y>
      <width>431</width>
      <height>20</height>
     </rect>
    </property>
    <property name="text">
     <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>120</y>
+     <width>181</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Введите натуральное число</string>
    </property>
   </widget>
  </widget>

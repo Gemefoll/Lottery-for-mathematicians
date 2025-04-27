@@ -30,8 +30,7 @@ bool is_win(QString s) {
     }
     QByteArray result = p->readAll();
     std::string a = result.toStdString();
-    // std::cout << a << std::endl;
-    return !(a == "1\n" || a == "2\n" || a == "4\n");
+    return a != "1\n";
 }
 
 bool is_number(QString s) {
@@ -40,14 +39,14 @@ bool is_number(QString s) {
             return false;
         }
     }
-    return true;
+    return !s.isEmpty();
 }
 
 void Widget::on_pushButton_clicked()
 {
     QString s = Widget::ui->plainTextEdit->toPlainText().trimmed();
     if (!is_number(s)) {
-        Widget::ui->label->setText("Введите натуральное число");
+        Widget::ui->label->setText("Ошибка, вы ввели не нетуральное число!");
         return;
     }
     if (is_win(s)) {
