@@ -1,19 +1,17 @@
-use num_bigint::BigInt;
+use num_bigint::BigUint;
 use std::io;
 
-fn step(a: &mut BigInt) {
-    if !a.bit(0) {
-        *a >>= 1;
-    } else {
-        *a *= 3;
-        *a += 1;
-    }
+fn step(a: &mut BigUint) {
+    *a *= 3u32;
+    *a += 1u32;
+    *a >>= a.trailing_zeros().unwrap_or(0);
 }
 
 fn main() {
     let mut s = String::new();
     io::stdin().read_line(&mut s).expect("Failed to read line");
-    let mut a = BigInt::parse_bytes(s.trim().as_bytes(), 10).expect("Failed to parse BigInt");
+    let mut a = BigUint::parse_bytes(s.trim().as_bytes(), 10).expect("Failed to parse BigInt");
+    a >>= a.trailing_zeros().unwrap_or(0);
     let mut b = a.clone();
     step(&mut b);
     while b != a {
